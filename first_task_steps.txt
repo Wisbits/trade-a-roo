@@ -1,0 +1,32 @@
+
+
+
+Steps:
+
+1. Set up new virtual environment 
+2. Preliminary research and get data
+3.
+
+Results
+
+Research:
+First I made a quick google query about how to approach this. I stumbled across the concept of "Backtesting" which is exactly used for evaluating a strategy (trading) or measure (weather forecast) 
+from historical data.
+
+Preliminary Thoughts
+Step 1 involves knowing to when in time to travel, buy a stock and sell the stock.
+Time travel is trivial and not inside the scope of this task.
+Buying a stock has one very important condition: The stock market has to be open.
+We want to buy as low as possible, further to reduce any possible "spread" (difference between buying price and selling price) we want to select a day with high trading volume.
+Our data has a column named "Low" which represents the lowest buying price.
+Similarly for selling the stock we will determine the day with the highest value in the "High"-Column. 
+
+
+Understanding the Data:
+Before making moves on predicting anything, one should always understand the data involved. For this I will engage in exploratory analysis of the provided data.
+
+Upon inspection of the data in the pandas dataframe, I saw that the date column is parsed as an object (as expected, because the csv consists of strings). This is 
+problematic, that's why we include the neccessary argument to the reading function parse_date
+
+Highest and Lowest: In our IBM-case we are lucky, as the lowest point is before the highest point in our period. If it were the other way around, we would have to implement other measures.
+
